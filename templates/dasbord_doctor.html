@@ -1,0 +1,94 @@
+{% load static %}
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Detail pations</title>
+  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+
+  
+      <link rel="stylesheet" href="{% static "css/dash.css" %}">
+
+  
+</head>
+
+<body>
+  <h1>
+ Dashbord Doctors
+</h1>
+<p>
+  (Detail Doctors)
+</p>
+<main>
+   
+  <table>
+    <thead>
+      <tr>
+        <th>
+          Provider Name
+        </th>
+        
+  
+        
+        <th>
+        Adress
+        </th>
+        <th>
+        Number phone
+        </th>
+        <th>
+            Detection price
+        </th>
+        <th>
+          
+            working hour
+        </th>
+        <th></th>
+      </tr>
+    </thead>
+    <tfoot>
+      <tr>
+        <th colspan='3'>
+          Year: 2024
+        </th>
+      </tr>
+    </tfoot>
+    <tbody>
+        {% for show in show_doctor %}
+      <tr>
+        <td data-title='Provider Name'>
+          {{show.name}}
+        </td>
+        <td data-title='Provider Name'>
+          {{show.adrees}}
+        </td>
+        <td data-title='E-mail'>
+        {{show.number_phone}}
+        </td>
+        <td data-title='E-mail'>
+        {{show.price}}
+        </td>
+        <td data-title='E-mail'>
+        {{show.working_hour}}
+        </td>
+        <td class='select'>
+          <a class='button' href="{% url "update2" show.id %}">
+           Update
+          </a>
+        </td>
+        <td class='select'>
+          <a class='button' href="{% url "delete_d" show.id %}">
+            Delete
+          </a>
+        </td>
+      </tr>
+      
+      <tr>
+        {% endfor %}
+     
+
+</main>
+
+
+</body>
+</html>

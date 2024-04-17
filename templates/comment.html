@@ -1,0 +1,195 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+{% include "search.html" %}
+<link rel="stylesheet" href="{% static "css/login.css" %}">
+<br>
+<br>
+<br>
+<br>
+<br>
+<style>
+    .update{
+  
+
+        display: flex;
+        align-items: center;
+        font-family: inherit;
+        font-weight: 500;
+        font-size: 16px;
+        padding: 0.7em 1.4em 0.7em 1.1em;
+        color: white;
+        background: #ad5389;
+        background: linear-gradient(0deg, rgba(20,167,62,1) 0%, rgba(102,247,113,1) 100%);
+        border: none;
+        box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+        letter-spacing: 0.05em;
+        border-radius: 20em;
+        cursor: pointer;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+      }
+      
+      .update:hover {
+        box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+      }
+      
+      .update:active {
+        box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+      }
+        
+</style>
+<div class="job_listing_area">
+    <div class="container">
+
+        <div class="job_lists">
+            <div class="row">
+<div class="post-comments" >
+    
+    <!-- comment -->
+    {% for comment in comments %}
+    <div class="media">
+        <div class="media-left">
+        
+            <img class="media-object" src="{% static "img/comments.png" %}">
+          
+        </div>
+        <div class="media-body " >
+            <div class="media-heading">
+                
+           
+                <span class="time"></span>
+            </div>
+            
+          
+
+            <!-- comment -->
+            <div class="media">
+             
+                <div class="media-body">
+                  
+                    <div class="media-heading">
+                        <h4>  {{comment.Name}}</h4>
+                        
+                    </div>
+                   
+                    <p>{{comment.comment}}</p>
+
+                    <a class='update' href="{% url "updateComment" comment.id %}">Update</a>
+                    <br>
+                    <br>
+                    <a class='update' href="{% url "deleteComment" comment.id %}">delete</a>
+                </div>
+                
+            </div>
+       
+            <!-- /comment -->
+        </div>
+    </div>
+    <!-- /comment -->
+    {% endfor %}
+    <div class="media-heading">
+    
+    </div>
+
+</div>
+</div>
+
+<!-- /comments -->                    
+
+<br>
+<br>
+<br>
+<br>
+<br>
+</div>
+
+
+    <h4>send comment</h4>
+    <form method="POST" >
+    {% csrf_token %}
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="input_field">
+                    <input type="text"  placeholder=" Name" name="name">
+                    
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="input_field">
+                    <input type="text"  placeholder=" email" name="email">
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="input_field">
+                    <input type="text" placeholder="your comment .." name="comment"></textarea>
+                </div>
+            </div>
+     
+           
+            <div class="col-md-12">
+                <div class="submit_btn">
+                    <button class="boxed-btn3 w-100" type="submit">comment</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+    
+<br>
+<br>
+<br>
+<br>
+<br>
+            <script>
+                function initMap() {
+                var uluru = {lat: -25.363, lng: 131.044};
+                var grayStyles = [
+                    {
+                    featureType: "all",
+                    stylers: [
+                        { saturation: -90 },
+                        { lightness: 50 }
+                    ]
+                    },
+                    {elementType: 'labels.text.fill', stylers: [{color: '#ccdee9'}]}
+                ];
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: {lat: -31.197, lng: 150.744},
+                    zoom: 9,
+                    styles: grayStyles,
+                    scrollwheel:  false
+                });
+                }
+                
+            </script>
+            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDpfS1oRGreGSBU5HHjMmQ3o5NLw7VdJ6I&callback=initMap"></script>
+            
+            </div>
+    </div>
+
+</div>
+</div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock body %}

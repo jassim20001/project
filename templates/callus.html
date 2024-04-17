@@ -1,0 +1,89 @@
+{% include "nav.html" %} 
+{% load static %}
+
+
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title> - call us Form</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link rel="stylesheet" href="{% static "css/call.css" %}">
+
+</head>
+
+<br>
+
+<body class="body" style=" background-color: rgba(0,0,0, 0.30);">
+   
+<!-- partial:index.partial.html -->
+<div class="container"  style=" position: relative;
+top: 90px; 
+  background-color: rgba(0,0,0, 0.40);">
+      <div class="text">
+         Call us 
+      </div>
+      <form action="#" method="POST" >
+         {% csrf_token %}
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" required name="fname">
+               <div class="underline"></div>
+               <label for="">First Name</label>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="input-data">
+               <input type="text" required name="lname">
+               <div class="underline"></div>
+               <label for="">Last Name</label>
+            </div>
+         </div>
+        
+         <div class="form-row">
+            <div class="input-data">
+               <input type="text" required name="email">
+               <div class="underline"></div>
+               <label for="">Email Address</label>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="input-data">
+               <input type="number" required name="phone">
+               <div class="underline"></div>
+               <label for="">Number phone</label>
+            </div>
+         </div>
+         <br>
+         <br>
+         <br>
+         <div class="form-row">
+         <div class="input-data textarea">
+            <textarea rows="8" cols="80" required name="message"></textarea>
+            <br />
+            <div class="underline"></div>
+            <label for="">Write your message</label>
+       
+            <div class="form-row submit-btn" >
+               <div class="input-data">
+                  <div class="inner"></div>
+                  <input  type="submit" value="submit" style=" background-color: #16a085;">
+               </div>
+            </div>
+       
+         
+         </div>
+      
+      </form>
+      
+   
+      </div>
+      </div>
+
+
+<!-- partial -->
+
+</body>
+
+</html>

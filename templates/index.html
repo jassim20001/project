@@ -1,0 +1,55 @@
+{% extends "navbar.html" %} {% block ok %} {% load static %}
+<style>
+
+</style>
+<section class="book" id="book">
+  <h1 class="hadding"><span>book</span>now</h1>
+  <div class="ro">
+    <div class="img">
+      <img src="{% static "image/Medical prescription.gif" %}">
+    </div>
+
+    <form class="form" action="" method="POST">
+      {% csrf_token %} 
+
+      <input
+        type="text"
+        placeholder="your name"
+        class="box"
+        name="name"
+        required
+      />
+      <input
+        type="number"
+        placeholder="your number"
+        class="box"
+        name="number"
+        required
+      />
+      <input
+        type="text"
+        placeholder="name the doctor"
+        class="box"
+        name="doctor"
+        required
+      />
+      <div class="age">
+        <input class="number" type="number" name="age" required />
+        <label>your age</label>
+      </div>
+      <div class="radio">
+        <label for="male">male</label>
+        <input type="radio" placeholder="male" name="gender" required />
+        <label for="female">female</label>
+        <input type="radio" value="female" name="gender" required />
+        <br />
+      </div>
+
+      <input type="date" class="box" name="data" required />
+      <br />
+      <input class="box" href="" type="submit" value="SEND" >
+    </form>
+  </div>
+</section>
+
+{% endblock ok %}

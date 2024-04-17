@@ -1,0 +1,21 @@
+{% load static %}
+<link rel="stylesheet" href="{% static "css/login.css" %}">
+</head>
+<body>
+
+
+<form action="{% url "deleteComment" delete.id %}" method="POST">
+
+{% csrf_token %}
+<h1>are you sure?</h1>
+  <b>
+    <input type="submit" value="yes" id="btn" />
+
+<hr>
+<a href="{% url "Comment" %}">Back</a>
+</form>
+
+
+
+
+

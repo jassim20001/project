@@ -1,0 +1,190 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+<div dir="ltr">
+
+    <div dir="ltr">
+        
+    {% include "search.html" %}
+    <div class="job_details_area">
+
+    <div class="container">
+        
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="job_details_header">
+                    <div class="single_jobs white-bg d-flex justify-content-between">
+                        <div class="jobs_left d-flex align-items-center">
+                            <div >
+                                {% if detal_doctor.img %}
+                                    <img class="img-circle" src="{{detal_doctor.img.url}}" alt="" width="100" height="100">
+                                    {% else %}
+                                    <img class="img-circle" src="{% static "img/def.jpg" %}" alt="" width="100" height="100">
+                                    {% endif %}
+                            </div>
+                            <div class="jobs_conetent">
+                                <a href="#" ><h4>{{detal_doctor.name}}</h4></a>
+                                <div class="links_locat d-flex align-items-center">
+                                    <div class="location">
+                                        <p> <i class="fa fa-map-marker"></i>adress:<span style="color: green;">{{detal_doctor.adrees}}<span> </p>
+                                    </div>
+                                    <div class="location">
+                                        <p> <i class="fa fa-clock-o"></i>working time:<span style="color: green;">{{detal_doctor.working_time}}<span></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="jobs_right">
+                            <div class="apply_now">
+                                <a class="boxed-btn3" href="">Detection book  </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="descript_wrap white-bg">
+                    <div class="single_wrapp">
+                        <h3>  about the doctor:
+                            {{detal_doctor.subtitle}}
+                        </h3>
+                    </div>
+                    <div class="white-card white-card-inner">
+                        <div class="single_wrap" style="margin-top: 10px;">
+              
+                                <ul>           
+                                <p></p>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="single_wrap">
+                        <h4>info the doctor:</h4>
+                        <h3> {{detal_doctor.infor}}</h3>
+                        <ul>
+                            <p class="tagitem disable-click pull-left mr-4" style="background-color: #f5f5f5;
+                            color: #808184;">  {{detal_doctor.doctor_in}}
+                            </p>
+                            <p class="tagitem disable-click pull-left" style="background-color: #f5f5f5;
+                            color: #808184;">
+                            </p>
+                        </ul>
+                        <br>
+                    </div>
+                    <div class="single_wrap">
+                      <h4>picture the midecal<h4>
+                             
+                {% if detal_doctor.img_medical_one %}
+                                <img class="image_clinic" src="{{detal_doctor.img_medical_one.url}}" alt="" >
+    {% else %}
+    <img class="img-circle" src="{% static "img/def.jpg" %}" alt="" width="100" height="100">
+    {% endif %}
+    {% if detal_doctor.img_medical_two %}
+    <img class="image_clinic" src="{{detal_doctor.img_medical_two.url}}" alt="" >
+{% else %}
+<img class="img-circle" src="{% static "img/def.jpg" %}" alt="" width="100" height="100">
+{% endif %}
+{% if detal_doctor.img_medical_three %}
+<img class="image_clinic" src="{{detal_doctor.img_medical_three.url}}" alt="" >
+{% else %}
+<img class="img-circle" src="{% static "img/def.jpg" %}" alt="" width="100" height="100">
+{% endif %}
+                    </div>
+                </div>
+    
+        <!-- comments -->
+        <div class="section-row">
+            
+                            
+            <div class="phone_num d-none d-xl-block">
+             
+         </div>
+    
+            <div class="post-comments" >
+    
+                <!-- comment -->
+                
+                <div class="media">
+                    <div class="media-left">
+                     
+                    </div>
+                    <div class="media-body " >
+                        <div class="media-heading">
+                            
+                          
+                            
+                        </div>
+                        
+                      
+                       
+    
+                        <!-- comment -->
+                        <div class="media">
+                            <div class="media-left">
+                               
+                            </div>
+                            <div class="media-body">
+                                <div class="media-heading">
+                                 
+                                </div>
+                              
+                            </div>
+                        </div>
+                        <!-- /comment -->
+                    </div>
+                </div>
+                <!-- /comment -->
+    
+                <div class="media-heading">
+                   
+                </div>
+    
+            </div>
+        </div>
+        
+        <!-- /comments -->                    
+      
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+            </div>
+            <div class="col-lg-4">
+                <div class="job_sumary">
+
+                    <div class="job_content">
+                        <ul>
+                            <li>   join us : <span style="color: blue;"></span></li>
+                            <li>Detection price   : <span style="color: blue;">{{detal_doctor.price}}$</span></li>
+                            <li> number phone   : <span style="color: blue;">{{detal_doctor.number_phone}}</span></li>
+                            <li>  working houre : <span style="color: blue;">{{detal_doctor.working_hour}}  houre</span></li>
+                        </ul>
+                        
+                    </div>
+                </div>
+                <div class="share_wrap d-flex">
+                    <span> my acounts:</span>
+                    <ul>
+                        <li><a href="{{detal_doctor.facebook}}"> <i class="fa fa-facebook"></i></a> </li>
+                        <li><a href="{{detal_doctor.google}}"> <i class="fa fa-google-plus"></i></a> </li>
+                        <li><a href="{{detal_doctor.twitter}}"> <i class="fa fa-twitter"></i></a> </li>
+                       
+                    </ul>
+                </div>
+                <div class="job_location_wrap">
+                    <div class="job_lok_inner">
+                       
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+    {% endblock body %}
